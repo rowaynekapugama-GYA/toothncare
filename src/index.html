@@ -44,7 +44,7 @@
       "name": "Do you accept health funds?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "All health funds are welcome, and we're set up with HICAPS, so if you have private dental cover you can claim on the spot and only pay any gap. Bring your health fund card to your visit."
+        "text": "All health funds welcome, with HICAPS on-the-spot claiming, so you only pay any gap. Bring your fund card to your visit."
       }
     },
     {
@@ -52,7 +52,7 @@
       "name": "What does the new-patient offer include?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your first visit covers a comprehensive examination, personalised treatment plan, X-rays, a scale and clean, and a fluoride treatment. We'll waive the gap where your fund rebates at least $199, or it's a flat $199 without cover. For new patients only; a $50 booking deposit applies and comes off the cost of your visit."
+        "text": "A full exam, treatment plan, X-rays, scale and clean, and fluoride. No-gap with a participating fund (rebating $199+), or a flat $199 without cover. New patients only; a $50 deposit applies and comes off your visit."
       }
     },
     {
@@ -60,7 +60,7 @@
       "name": "Is my child eligible for CDBS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Many children are eligible for the government's Child Dental Benefits Schedule: a benefit towards basic dental services of up to $1,158 over two consecutive calendar years. Ask our team and we'll help you check."
+        "text": "Many children qualify for the government's CDBS: up to $1,158 over two calendar years towards basic dental care. Ask us and we'll help you check."
       }
     },
     {
@@ -68,7 +68,7 @@
       "name": "What if I have a dental emergency?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If you're in pain or you've had an accident, call us on 02 4933 4667. We'll do our best to see you quickly. We welcome emergencies and walk-ins, and we're open Saturdays too."
+        "text": "Call us on 02 4933 4667 and we'll do our best to see you quickly. Emergencies and walk-ins welcome, Saturdays too."
       }
     },
     {
@@ -76,7 +76,7 @@
       "name": "I'm anxious about the dentist, can you help?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If you feel anxious, tell us. We'll take things at your pace, explain each step, and use gentle techniques and comfort options such as in-chair entertainment to help you relax."
+        "text": "Just tell us. We take things at your pace, explain each step, and offer gentle comfort options to help you relax."
       }
     },
     {
@@ -84,7 +84,7 @@
       "name": "Do you offer payment plans?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, interest-free payment plans are available through providers such as Humm (National Dental Plan) and DentiCare. Lending criteria, fees and terms and conditions apply. See our Fees & Payment Plans page for details."
+        "text": "Yes, interest-free plans through Humm and DentiCare. Lending criteria, fees and T&Cs apply. See our Fees & Payment Plans page."
       }
     }
   ]
@@ -93,14 +93,16 @@
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Figtree:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 /* ============ TOKENS ============ */
 :root{
-  --bg:#0A0E0F;
-  --bg-2:#101617;
-  --panel:#131E20;
-  --panel-2:#0e1719;
+  --bg:#0B1112;
+  /* ambient: darker at the edges, lifting to a teal-tinged dark-grey toward the centre */
+  --bg-grad:radial-gradient(135% 105% at 50% 32%, #172624 0%, #0f1a1a 52%, #080c0d 100%);
+  --bg-2:#111c1d;
+  --panel:#162527;
+  --panel-2:#101d1e;
   --aqua:#4FD8D2;
   --aqua-2:#6EEAE4;
   --neon:#7FF6F0;
@@ -108,7 +110,7 @@
   --grey:#B8C4C6;
   --grey-2:#7d8c8e;
   --gold:#E8C98A;
-  --border:rgba(79,216,210,.18);
+  --border:rgba(79,216,210,.22);
   --border-bright:rgba(127,246,240,.55);
   --glow-sm:0 0 12px rgba(127,246,240,.35);
   --glow-md:0 0 28px rgba(127,246,240,.28), 0 0 6px rgba(127,246,240,.4);
@@ -116,32 +118,35 @@
   --text-soft:#c9d4d6;
   --title-dim:rgba(255,255,255,.88);
   --btn-ink:#04292b;
-  --surface-flat:#0C0F10;
-  --card-flat:linear-gradient(105deg,#0C0F10 0%,#0D1112 60%,#0C0F10 100%);
-  --card-grad:linear-gradient(165deg,#162325,#101a1c);
-  --panel-grad:linear-gradient(165deg,rgba(19,30,32,.9),rgba(14,23,25,.75));
-  --panel-glass:rgba(19,30,32,.85);
-  --inset-bg:rgba(30,46,49,.55);
-  --inset-border:rgba(127,246,240,.14);
-  --glass:rgba(16,22,23,.55);
-  --glass-2:rgba(14,23,25,.88);
-  --menu-bg:rgba(16,22,23,.97);
-  --nav-bg:rgba(10,14,15,.88);
-  --topbar-bg:rgba(10,14,15,.6);
-  --footer-bg:#070b0c;
-  --hairline:rgba(255,255,255,.08);
-  --hairline2:rgba(255,255,255,.12);
-  --border-faint:rgba(127,246,240,.1);
+  --surface-flat:#132020;
+  /* flat cards: aqua-tinged, edge-dark -> centre lighter */
+  --card-flat:radial-gradient(120% 130% at 50% 40%, #1a2b2b 0%, #122020 55%, #0c1516 100%);
+  --card-grad:linear-gradient(165deg,#1b2c2d,#121f20);
+  --panel-grad:linear-gradient(165deg,rgba(28,44,46,.92),rgba(18,30,32,.8));
+  --panel-glass:rgba(24,38,40,.85);
+  --inset-bg:rgba(34,52,55,.55);
+  --inset-border:rgba(127,246,240,.16);
+  --glass:rgba(20,30,31,.58);
+  --glass-2:rgba(18,29,31,.9);
+  --menu-bg:rgba(19,29,31,.97);
+  --nav-bg:rgba(12,19,20,.9);
+  --topbar-bg:rgba(12,19,20,.62);
+  --footer-bg:#0a1314;
+  --hairline:rgba(127,246,240,.1);
+  --hairline2:rgba(127,246,240,.16);
+  --border-faint:rgba(127,246,240,.12);
   --pill-bg:rgba(79,216,210,.08);
   --pill-border:rgba(79,216,210,.3);
   --pill-ink:#9fe8e3;
   --font-display:'Playfair Display',Georgia,serif;
   --font-head:'Figtree',sans-serif;
   --font-body:'Figtree',sans-serif;
+  --font-script:'Great Vibes',cursive;
 }
 
 [data-theme="light"]{
   --bg:#F5F8F8;
+  --bg-grad:radial-gradient(135% 105% at 50% 30%, #ffffff 0%, #eef5f5 58%, #e1eaea 100%);
   --bg-2:#ECF2F2;
   --panel:#FFFFFF;
   --panel-2:#F2F6F6;
@@ -195,10 +200,13 @@ html.theming, html.theming body, html.theming *{transition:background-color .3s 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
+  background-color:var(--bg);
+  background-image:var(--bg-grad);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
   color:var(--grey);
   font-family:var(--font-body);
-  font-size:17px;
+  font-size:18px;
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
@@ -378,31 +386,52 @@ header.scrolled .topbar{max-height:0;border-bottom-color:transparent}
 @media(max-width:760px){.mm-services{display:inline-flex}}
 
 /* ============ HERO ============ */
-.hero{min-height:100svh;display:flex;align-items:flex-end;padding:160px 0 96px;overflow:hidden}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:150px 0 60px;overflow:hidden;text-align:center}
 .hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
 .hero-bg img{width:100%;height:100%;object-fit:cover;animation:kenburns 26s ease-in-out infinite alternate}
-@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(-1.5%,1%)}}
+@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.07) translate(-1%,.6%)}}
 .hero-bg::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(to top right,rgba(6,10,11,.85) 0%,rgba(6,10,11,.35) 38%,transparent 60%),
-             linear-gradient(100deg,rgba(10,14,15,.7) 0%,rgba(10,14,15,.42) 42%,rgba(10,14,15,.18) 78%,rgba(10,14,15,.4) 100%),
-             linear-gradient(0deg,var(--bg) 0%,transparent 26%);
+  /* teal-tinged base darkening + soft edge vignette, never pure black */
+  background:linear-gradient(0deg,rgba(9,17,18,.94) 0%,rgba(11,22,23,.62) 26%,rgba(11,22,23,.16) 52%,transparent 70%),
+             radial-gradient(125% 95% at 50% 42%,transparent 42%,rgba(7,14,15,.5) 100%),
+             linear-gradient(0deg,var(--bg) 0%,transparent 20%);
 }
-.hero-trail{position:absolute;z-index:-1;right:-6%;top:-12%;width:60vw;max-width:900px;opacity:.6;pointer-events:none}
-.hero-inner{max-width:1300px;margin:0 auto;padding:0 24px;width:100%}
-.hero h1{font-size:clamp(44px,6.6vw,84px);font-weight:300;letter-spacing:-.02em;margin:26px 0 10px;max-width:none}
-.hero h1 .accent{font-weight:500;text-shadow:0 0 34px rgba(79,216,210,.45)}
-.hero-script{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(19px,2.2vw,28px);letter-spacing:.02em;color:var(--aqua-2);text-shadow:0 0 10px rgba(127,246,240,.22)}
-.hero p.lede{max-width:480px;margin:26px 0 40px;font-weight:300;font-size:18px;color:var(--grey)}
-.hero-ctas{display:flex;gap:18px;flex-wrap:wrap}
-.hero-note{margin-top:18px;font-family:var(--font-head);font-size:13px;letter-spacing:.06em;color:var(--grey-2);font-weight:400}
-.hero-scroll{
-  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--grey-2);
-  font-family:var(--font-head);font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+.hero-inner{position:relative;max-width:960px;margin:0 auto;padding:0 24px;width:100%;display:flex;flex-direction:column;align-items:center}
+.hero-smile{
+  font-family:var(--font-script);font-weight:400;line-height:.9;
+  font-size:clamp(104px,20vw,272px);color:#e6fffc;
+  text-shadow:0 0 5px #fff,0 0 12px #7FF6F0,0 0 26px #4FD8D2,0 0 46px #4FD8D2,0 0 78px rgba(79,216,210,.7);
+  animation:smilePulse 4s ease-in-out infinite;
 }
-.hero-scroll .line{width:1px;height:44px;background:linear-gradient(180deg,var(--neon),transparent);box-shadow:var(--glow-sm);animation:drip 2.4s ease-in-out infinite}
-@keyframes drip{0%{transform:scaleY(.2);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(1);opacity:0}}
+@keyframes smilePulse{0%,100%{text-shadow:0 0 5px #fff,0 0 12px #7FF6F0,0 0 26px #4FD8D2,0 0 46px #4FD8D2,0 0 78px rgba(79,216,210,.55)}50%{text-shadow:0 0 6px #fff,0 0 16px #7FF6F0,0 0 32px #4FD8D2,0 0 58px #4FD8D2,0 0 96px rgba(79,216,210,.8)}}
+.hero-conf{
+  font-family:var(--font-head);font-weight:400;color:#fff;
+  font-size:clamp(15px,2.4vw,30px);letter-spacing:.42em;text-transform:uppercase;
+  margin:-.15em 0 0 .42em;text-shadow:0 0 14px rgba(127,246,240,.35);
+}
+.hero-book{
+  margin-top:34px;display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);font-size:14px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;
+  color:#eafffd;padding:16px 46px;border-radius:8px;
+  border:1px solid rgba(127,246,240,.7);background:rgba(20,40,42,.28);
+  box-shadow:0 0 16px rgba(127,246,240,.35),inset 0 0 14px rgba(127,246,240,.14);
+  transition:background .35s ease,box-shadow .35s ease,transform .35s ease;
+}
+.hero-book:hover{background:rgba(127,246,240,.16);box-shadow:0 0 30px rgba(127,246,240,.6),inset 0 0 18px rgba(127,246,240,.25);transform:translateY(-2px)}
+.hero-strip{
+  margin-top:44px;display:flex;align-items:center;justify-content:center;gap:clamp(18px,4vw,52px);flex-wrap:wrap;
+}
+.hs-item{display:flex;flex-direction:column;align-items:center;gap:10px;color:#dfeeee;transition:color .3s ease}
+.hs-item:hover{color:var(--neon)}
+.hs-ico{
+  width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(127,246,240,.55);color:#bff4f0;
+  box-shadow:0 0 14px rgba(127,246,240,.25);transition:.3s;
+}
+.hs-item:hover .hs-ico{border-color:var(--neon);color:var(--neon);box-shadow:0 0 22px rgba(127,246,240,.5)}
+.hs-txt{font-family:var(--font-head);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;line-height:1.5}
+.hs-div{width:1px;height:64px;background:linear-gradient(180deg,transparent,rgba(127,246,240,.4),transparent)}
 
 /* ============ CALLOUT BAND ============ */
 .callout{
@@ -447,7 +476,7 @@ header.scrolled .topbar{max-height:0;border-bottom-color:transparent}
 .acc-item.open .acc-title{color:var(--white)}
 .acc-body{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .35s ease,margin .35s ease;margin:0}
 .acc-item.open .acc-body{max-height:200px;opacity:1;margin-top:14px}
-.acc-body p{font-size:15.5px;font-weight:300;color:var(--grey);line-height:1.7;padding-left:46px}
+.acc-body p{font-size:16.5px;font-weight:300;color:var(--grey);line-height:1.7;padding-left:46px}
 .acc-img{position:relative;max-width:460px;justify-self:end;width:100%}
 .acc-img .welcome-img img{aspect-ratio:4/5;width:100%;height:auto;object-fit:cover;object-position:left center}
 .gbadge-float{
@@ -477,7 +506,7 @@ header.scrolled .topbar{max-height:0;border-bottom-color:transparent}
 }
 .why-band h3{font-size:22px;font-weight:500;margin-bottom:24px}
 .why-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:15px 40px}
-.why-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;font-weight:300;color:var(--grey);line-height:1.6}
+.why-list li{display:flex;gap:12px;align-items:flex-start;font-size:16px;font-weight:300;color:var(--grey);line-height:1.6}
 .why-list svg{color:var(--neon);flex:none;margin-top:3px;filter:drop-shadow(0 0 5px rgba(127,246,240,.5))}
 @media(max-width:760px){.why-list{grid-template-columns:1fr}.why-band{padding:28px 24px}}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:70px}
@@ -505,21 +534,34 @@ header.scrolled .topbar{max-height:0;border-bottom-color:transparent}
 }
 .flip:hover .flip-face{border-color:var(--border-bright);box-shadow:0 14px 42px rgba(0,0,0,.5),var(--glow-sm)}
 .flip-face .f-ico{color:var(--aqua);filter:drop-shadow(0 0 8px rgba(127,246,240,.5))}
-.f-ico.neon{width:104px;height:104px;display:grid;place-items:center;filter:none;animation:floaty 5.5s ease-in-out infinite}
+.f-ico.neon{
+  position:relative;width:118px;height:118px;display:grid;place-items:center;filter:none;
+  perspective:600px;animation:floaty 5.5s ease-in-out infinite;
+}
+/* soft grounded glow beneath the 3D icon, so it reads as lifted off the card */
+.f-ico.neon::after{
+  content:"";position:absolute;left:50%;bottom:8px;transform:translateX(-50%);
+  width:66%;height:18px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(79,216,210,.4),transparent 70%);
+  filter:blur(6px);opacity:.5;transition:opacity .55s ease,width .55s ease;
+}
 .f-ico.neon .neon-img{
-  width:104px;height:104px;object-fit:cover;border-radius:16px;
-  mix-blend-mode:screen; /* melts the black bg into the card */
+  width:118px;height:118px;object-fit:cover;border-radius:16px;
+  mix-blend-mode:screen; /* melts the dark render bg into the card */
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.5)) drop-shadow(0 0 10px rgba(127,246,240,.35));
   transition:transform .55s cubic-bezier(.3,.7,.3,1.35),filter .55s ease;
+  transform-style:preserve-3d;
 }
-.flip:hover .f-ico.neon .neon-img,.flip.tapped .f-ico.neon .neon-img{
-  transform:scale(1.16) rotate(-3deg);
-  filter:brightness(1.3) saturate(1.15) drop-shadow(0 0 20px rgba(127,246,240,.75));
+.flip:hover .f-ico.neon .neon-img,.flip.tapped .f-ico.neon .neon-img,.flip:focus-visible .f-ico.neon .neon-img{
+  transform:translateZ(30px) scale(1.14) rotate(-3deg);
+  filter:brightness(1.28) saturate(1.15) drop-shadow(0 12px 16px rgba(0,0,0,.55)) drop-shadow(0 0 24px rgba(127,246,240,.8));
 }
+.flip:hover .f-ico.neon::after,.flip.tapped .f-ico.neon::after{opacity:.85;width:74%}
 .f-ico.neon svg{color:var(--aqua);filter:drop-shadow(0 0 8px rgba(127,246,240,.5))}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-.flip-face h3{font-size:16px;font-weight:500;letter-spacing:.06em}
+.flip-face h3{font-size:17px;font-weight:500;letter-spacing:.06em}
 .flip-back{transform:rotateY(180deg);justify-content:center;background:var(--card-grad)}
-.flip-back p{font-size:13.5px;line-height:1.65;color:var(--grey)}
+.flip-back p{font-size:15px;line-height:1.65;color:var(--grey)}
 .flip-back a{font-family:var(--font-head);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--neon)}
 .flip-back a::after{content:" →"}
 
@@ -622,7 +664,7 @@ header.scrolled .topbar{max-height:0;border-bottom-color:transparent}
 }
 .oc-right h4{font-family:var(--font-head);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--aqua);font-weight:500;margin-bottom:20px}
 .oc-right ul{list-style:none;display:grid;gap:14px}
-.oc-right li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;font-weight:300;color:var(--grey);line-height:1.55}
+.oc-right li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;font-weight:300;color:var(--grey);line-height:1.55}
 .oc-right li svg{color:var(--neon);flex:none;margin-top:2px;filter:drop-shadow(0 0 5px rgba(127,246,240,.5))}
 @media(prefers-reduced-motion:reduce){
   .offer-card{position:static !important}
@@ -736,7 +778,7 @@ header.scrolled .topbar{max-height:0;border-bottom-color:transparent}
 .np-item:hover h3{text-shadow:0 0 14px rgba(127,246,240,.35)}
 .np-num{font-family:var(--font-head);font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--aqua);flex:none;margin-top:5px}
 .np-item h3{font-size:18px;font-weight:500;margin-bottom:8px;transition:text-shadow .3s}
-.np-item p{font-size:14.5px;font-weight:300;color:var(--grey);line-height:1.65}
+.np-item p{font-size:15.5px;font-weight:300;color:var(--grey);line-height:1.65}
 @media(prefers-reduced-motion:reduce){
   .np-stage{animation:none}
   .np-line{transform:scaleY(1)}
@@ -753,12 +795,22 @@ header.scrolled .topbar{max-height:0;border-bottom-color:transparent}
   -webkit-text-stroke:1px var(--aqua);opacity:.9;text-shadow:0 0 18px rgba(79,216,210,.25);
 }
 .step h3{font-size:17px;font-weight:500;margin:16px 0 12px;letter-spacing:.04em}
-.step p{font-size:14px;color:var(--grey)}
+.step p{font-size:15px;color:var(--grey)}
 .step::after{
   content:"";position:absolute;top:50%;right:-21px;width:22px;height:1px;
   background:linear-gradient(90deg,var(--aqua),transparent);opacity:.6;
 }
 .step:last-child::after{display:none}
+
+/* ============ PILLS ============ */
+.tsc-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 12px;border-radius:999px;white-space:nowrap;
+  font-family:var(--font-head);font-size:11.5px;font-weight:500;letter-spacing:.02em;
+  color:var(--pill-ink);background:var(--pill-bg);border:1px solid var(--pill-border);
+}
+.pill svg{flex:none;opacity:.9}
 
 /* ============ TEAM (Setia editorial stack) ============ */
 .btn-arrow{display:inline-block;transition:transform .3s ease}
@@ -882,7 +934,7 @@ header.scrolled .topbar{max-height:0;border-bottom-color:transparent}
 .comm-inner p{max-width:460px;font-weight:300}
 
 /* ============ FINAL CTA ============ */
-.final{text-align:center;overflow:hidden;padding:150px 0;background:#0A0E0F}
+.final{text-align:center;overflow:hidden;padding:150px 0;background:radial-gradient(120% 120% at 50% 40%,#152322 0%,#0d1718 55%,#080d0e 100%)}
 .final-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
 .final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(10,14,15,.55),rgba(10,14,15,.92) 78%);z-index:1}
 .final .glow-orb{z-index:1}
@@ -1027,7 +1079,11 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
   .flip{height:250px}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr}
-  .hero p.lede{font-size:16px}
+  .hero{padding:120px 0 46px}
+  .hero-strip{gap:22px}
+  .hs-div{display:none}
+  .hs-txt{font-size:11.5px}
+  .hero-conf{letter-spacing:.3em}
   .rev-card{width:300px}
   .foot-grid,.foot-grid-5{grid-template-columns:1fr}
   .nav-book{padding:11px 18px;font-size:11px}
@@ -1153,22 +1209,28 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="top">
-  <div class="hero-bg"><img src="assets/hero.webp" alt="Tooth n Care clinic reception with aqua feature wall and glowing tooth logo" fetchpriority="high"></div>
-  <svg class="hero-trail" viewBox="0 0 600 600" fill="none" aria-hidden="true">
-    <path d="M580 40C420 80 300 240 330 400c20 110 130 170 240 150" stroke="url(#trailGrad)" stroke-width="2"/>
-    <defs><linearGradient id="trailGrad" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#7FF6F0" stop-opacity="0"/><stop offset=".5" stop-color="#7FF6F0" stop-opacity=".9"/><stop offset="1" stop-color="#7FF6F0" stop-opacity="0"/></linearGradient></defs>
-  </svg>
-  <div class="hero-inner">
-    <span class="eyebrow rv">Modern Dentistry in the Heart of East Maitland</span>
-    <h1 class="rv" style="font-size:clamp(36px,4.8vw,62px)">Friendly dental care<br>for the <span class="accent">whole family</span></h1>
-    <p class="lede rv" style="max-width:600px;font-size:17px">Routine check-ups, smile makeovers or something that's been bothering you. We'll help you feel at ease and leave smiling.</p>
-    <div class="hero-ctas rv">
-      <a class="btn btn-primary" href="https://apac.dentalhub.online/soe/new/?pid=AUXOD01" target="_blank" rel="noopener">Book Online</a>
-      <a class="btn btn-ghost" href="tel:0249334667">Call 02 4933 4667</a>
+  <div class="hero-bg"><img src="assets/hero.webp" alt="Tooth n Care clinic reception, aqua feature wall and glowing tooth logo" fetchpriority="high"></div>
+  <h1 class="hero-inner">
+    <span class="hero-smile rv">Smile</span>
+    <span class="hero-conf rv">With Confidence</span>
+    <a class="hero-book rv" href="https://apac.dentalhub.online/soe/new/?pid=AUXOD01" target="_blank" rel="noopener">Book Now</a>
+    <div class="hero-strip rv">
+      <a class="hs-item" href="tel:0249334667" aria-label="Call us on 02 4933 4667">
+        <span class="hs-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+        <span class="hs-txt">02 4933 4667</span>
+      </a>
+      <span class="hs-div" aria-hidden="true"></span>
+      <a class="hs-item" href="https://www.google.com/maps?q=135+Lawes+Street,+East+Maitland+NSW+2323" target="_blank" rel="noopener" aria-label="Find us at 135 Lawes Street, East Maitland">
+        <span class="hs-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <span class="hs-txt">135 Lawes Street<br>East Maitland NSW 2323</span>
+      </a>
+      <span class="hs-div" aria-hidden="true"></span>
+      <a class="hs-item" href="https://apac.dentalhub.online/soe/new/?pid=AUXOD01" target="_blank" rel="noopener" aria-label="Book online">
+        <span class="hs-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
+        <span class="hs-txt">Book Online</span>
+      </a>
     </div>
-    <p class="hero-note rv">Open six days a week, including Saturdays.</p>
-  </div>
-  <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
+  </h1>
 </section>
 
 <!-- ================= SATURDAY / EMERGENCY CALLOUT ================= -->
@@ -1201,8 +1263,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
     <div class="sec-head rv" style="margin-inline:auto;text-align:center">
       <span class="eyebrow" style="justify-content:center">East Maitland</span>
       <h2>Welcome to <span class="accent">Tooth n Care</span></h2>
-      <p style="max-width:660px;margin-inline:auto">Tooth n Care is a modern dental clinic in East Maitland offering a full range of dental services for you and your family, all under one roof, in a clean, calm and comfortable setting.</p>
-      <p style="max-width:660px;margin-inline:auto;margin-top:14px">Our focus is simple: you. We take the time to understand what's going on, explain your options clearly, and build a plan that suits your needs, your goals and your budget. No jargon, no pressure: just honest, considered care.</p>
+      <p style="max-width:540px;margin-inline:auto">Complete dental care for the whole family, under one roof in East Maitland. Honest, gentle care with no jargon and no pressure.</p>
     </div>
 
     <div class="acc-grid">
@@ -1257,33 +1318,33 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
     <div class="sec-head rv" style="margin-inline:auto;text-align:center">
       <span class="eyebrow" style="justify-content:center">Our Services</span>
       <h2>Explore our <span class="accent">services</span></h2>
-      <p>Hover or tap a card to see how we can help.</p>
+      <p>Tap a card to see how we can help.</p>
     </div>
 
     <div class="svc-grid">
       <div class="flip rv" tabindex="0"><div class="flip-inner">
-        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260716_053955_ddc48128-3eb1-475b-b1cb-df11ae292413_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>General Dentistry</h3></div>
-        <div class="flip-face flip-back"><p>Everyday care to keep your teeth and gums healthy, from check-ups to extractions and root canals.</p><a href="/services/general-dentistry">Learn more</a></div>
+        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260722_012633_fb9a1d85-1048-4f1b-9004-bb4b63b6c226_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>General Dentistry</h3></div>
+        <div class="flip-face flip-back"><p>Check-ups, cleans, extractions and root canals to keep teeth and gums healthy.</p><a href="/services/general-dentistry">Learn more</a></div>
       </div></div>
       <div class="flip rv" tabindex="0"><div class="flip-inner">
-        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260716_054801_7a13237d-1215-4b25-838b-ed6b02e77e4d_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Preventative Dentistry</h3></div>
-        <div class="flip-face flip-back"><p>Cleans, gum care and mouthguards that help you avoid bigger problems down the track.</p><a href="/services/preventative-dentistry">Learn more</a></div>
+        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260722_012846_bd43c6b9-41a9-455d-b3c1-bcef0e8fa5e7_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Preventative Dentistry</h3></div>
+        <div class="flip-face flip-back"><p>Cleans, gum care and mouthguards to help avoid bigger problems later.</p><a href="/services/preventative-dentistry">Learn more</a></div>
       </div></div>
       <div class="flip rv" tabindex="0"><div class="flip-inner">
-        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260716_053956_bf24c248-0a8f-457a-a273-5956c3d376e8_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Cosmetic Dentistry</h3></div>
-        <div class="flip-face flip-back"><p>Teeth whitening, veneers and smile makeovers to help you feel good about your smile.</p><a href="/services/cosmetic-dentistry">Learn more</a></div>
+        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260722_020223_c0c7b201-a19c-43d3-9902-1e3b7d7f02db.png" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Cosmetic Dentistry</h3></div>
+        <div class="flip-face flip-back"><p>Whitening, veneers and smile makeovers to help you love your smile.</p><a href="/services/cosmetic-dentistry">Learn more</a></div>
       </div></div>
       <div class="flip rv" tabindex="0"><div class="flip-inner">
-        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260716_054113_326815d7-91c4-4c68-a55b-2b3d87cdc941_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Restorative Dentistry</h3></div>
-        <div class="flip-face flip-back"><p>Fillings, crowns, bridges and dentures to repair and rebuild damaged or missing teeth.</p><a href="/services/restorative-dentistry">Learn more</a></div>
+        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260722_012850_382e542f-8cca-4092-aacc-c3f8ea4a688d_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Restorative Dentistry</h3></div>
+        <div class="flip-face flip-back"><p>Fillings, crowns, bridges and dentures to rebuild damaged or missing teeth.</p><a href="/services/restorative-dentistry">Learn more</a></div>
       </div></div>
       <div class="flip rv" tabindex="0"><div class="flip-inner">
-        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260716_053958_54c5823e-3d5b-4540-ab67-0aec68ff2b13_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Dental Implants</h3></div>
+        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260722_012851_046750ba-1338-4654-9395-f758936a9ab7_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Dental Implants</h3></div>
         <div class="flip-face flip-back"><p>A long-term option for replacing missing teeth.</p><a href="/services/dental-implants">Learn more</a></div>
       </div></div>
       <div class="flip rv" tabindex="0"><div class="flip-inner">
-        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260716_054001_1a81f226-39ea-4ce6-a990-2aac747f32bf_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Orthodontics</h3></div>
-        <div class="flip-face flip-back"><p>Clear aligners and braces to gently straighten teeth for children, teens and adults.</p><a href="/services/orthodontics">Learn more</a></div>
+        <div class="flip-face"><span class="f-ico neon"><img class="neon-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GIZP0taqcmOBFecYrwgGNNyy2Y/hf_20260722_013426_4ce811e4-2257-460e-9734-902bbeea4f2e_min.webp" alt="" loading="lazy" width="96" height="96" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg style="display:none" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/></svg></span><h3>Orthodontics</h3></div>
+        <div class="flip-face flip-back"><p>Clear aligners and braces for children, teens and adults.</p><a href="/services/orthodontics">Learn more</a></div>
       </div></div>
     </div>
 
@@ -1314,13 +1375,13 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
     <div class="sec-head rv" style="margin-inline:auto;text-align:center">
       <span class="eyebrow" style="justify-content:center">Our Approach</span>
       <h2>How we work <span class="accent">with you</span></h2>
-      <p>We keep things clear from start to finish.</p>
+      <p>Clear communication, start to finish.</p>
     </div>
     <div class="steps">
-      <div class="step rv"><span class="n">01</span><h3>What's bothering you?</h3><p>A thorough consultation to understand your concerns and goals.</p></div>
-      <div class="step rv"><span class="n">02</span><h3>What's going on?</h3><p>We examine the problem areas and talk you through your options.</p></div>
-      <div class="step rv"><span class="n">03</span><h3>What we'll do</h3><p>Together we agree on a treatment plan that works for you.</p></div>
-      <div class="step rv"><span class="n">04</span><h3>What to expect</h3><p>We explain the likely outcome so there are no surprises.</p></div>
+      <div class="step rv"><span class="n">01</span><h3>What's bothering you?</h3><p>A thorough chat about your concerns and goals.</p></div>
+      <div class="step rv"><span class="n">02</span><h3>What's going on?</h3><p>We examine the problem areas and talk you through the options.</p></div>
+      <div class="step rv"><span class="n">03</span><h3>What we'll do</h3><p>We agree on a plan that works for you.</p></div>
+      <div class="step rv"><span class="n">04</span><h3>What to expect</h3><p>We explain the likely outcome, so no surprises.</p></div>
     </div>
   </div>
 </section>
@@ -1332,8 +1393,8 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
       <div class="offers-intro rv">
         <span class="offer-tag">Offers</span>
         <h2 style="margin:24px 0 20px;font-size:clamp(30px,3.4vw,44px);font-weight:400">New-patient <span class="accent">offer</span></h2>
-        <p style="font-weight:300;max-width:390px">New to Tooth n Care? Get your smile off to a healthy start. Your first visit covers a comprehensive examination, personalised treatment plan, X-rays, a scale and clean, and a fluoride treatment.</p>
-        <p style="font-weight:300;max-width:390px;margin-top:14px">In a private health fund? We'll waive the gap on these items where your fund rebates at least $199, so there's nothing to pay out of pocket. No health cover? It's a flat $199. For new patients only; a $50 booking deposit applies and comes off the cost of your visit.</p>
+        <p style="font-weight:300;max-width:400px">New here? Your first visit covers a full exam, treatment plan, X-rays, scale and clean, and fluoride. No-gap with a participating health fund (rebating $199+), or a flat $199 without cover.</p>
+        <p style="font-weight:300;max-width:400px;margin-top:12px">New patients only. A $50 deposit applies and comes off your visit.</p>
         <a class="btn btn-ghost" style="margin-top:28px" href="/offers">See full offer details and terms <span class="btn-arrow">→</span></a>
       </div>
 
@@ -1342,7 +1403,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
           <div class="oc-left">
             <span class="oc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.8-4.4-2.4-6.2-.8C4 6.3 3.6 8.9 4.3 11c.8 2.6 1.4 5.6 2.2 8.2.3 1 1.7 1 2 0l1.3-4.6c.4-1.4 2-1.4 2.4 0l1.3 4.6c.3 1 1.7 1 2 0 .8-2.6 1.4-5.6 2.2-8.2.7-2.1.3-4.7-1.5-6.3-1.8-1.6-4.6-1-6.2.8Z"/><path d="m18 3 .6 1.4L20 5l-1.4.6L18 7l-.6-1.4L16 5l1.4-.6L18 3Z"/></svg></span>
             <h3>New-Patient Offer</h3>
-            <p class="oc-aud">Gap waived where your fund rebates at least $199</p>
+            <p class="oc-aud">No-gap with a participating fund ($199+ rebate)</p>
             <div class="oc-price">$199* or no-gap</div>
             <a class="oc-btn" href="/offers"><span class="oc-btn-ico">→</span>See Offer Details &amp; Terms</a>
             <img class="oc-img" data-placeholder="true" src="assets/slider.webp" alt="Modern treatment room at Tooth n Care" loading="lazy">
@@ -1363,7 +1424,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
           <div class="oc-left">
             <span class="oc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 14.5c1 1 2.2 1.5 3.5 1.5s2.5-.5 3.5-1.5"/></svg></span>
             <h3>Children's Dental Care (CDBS)</h3>
-            <p class="oc-aud">For eligible children under the government Child Dental Benefits Schedule</p>
+            <p class="oc-aud">For eligible children under CDBS</p>
             <div class="oc-price">Up to $1,158*</div>
             <a class="oc-btn" href="/offers"><span class="oc-btn-ico">→</span>See Offer Details &amp; Terms</a>
             <img class="oc-img" data-placeholder="true" src="assets/tile-family.webp" alt="Family-friendly treatment rooms" loading="lazy">
@@ -1384,7 +1445,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
           <div class="oc-left">
             <span class="oc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M8.5 15.5h2M13.5 15.5h2"/></svg></span>
             <h3>Interest-Free Payment Plans</h3>
-            <p class="oc-aud">Through providers such as Humm (National Dental Plan) and DentiCare</p>
+            <p class="oc-aud">Through Humm and DentiCare</p>
             <div class="oc-price">Interest-free</div>
             <a class="oc-btn" href="/payment-options"><span class="oc-btn-ico">→</span>Fees &amp; Payment Plans</a>
             <img class="oc-img" data-placeholder="true" src="assets/community.webp" alt="Tooth n Care reception" loading="lazy">
@@ -1454,7 +1515,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
         <span class="bp-caption"><b>Smile Makeover</b><small>Treatments combined into one plan designed around you.</small></span>
       </button>
     </div>
-    <p class="ba-disclaimer rv">Images are illustrative digital representations only and do not depict actual patients or guaranteed results. Any dental or surgical procedure carries risks and individual results vary. A consultation is required to determine what is suitable for you.</p>
+    <p class="ba-disclaimer rv">Images are illustrative digital representations only, not actual patients or guaranteed results. All procedures carry risks and results vary. A consultation is required to determine what suits you.</p>
   </div>
 </section>
 
@@ -1467,7 +1528,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
     <div class="np-grid">
       <div class="np-copy rv">
         <h2 style="font-size:clamp(30px,3.4vw,44px);font-weight:400;margin-bottom:22px">Invest in your <span class="accent">smile</span></h2>
-        <p style="font-weight:300">Your smile is one of your most valuable assets, and looking after it is an investment in yourself. Your first visit with us is thorough, gentle and completely pressure-free.</p>
+        <p style="font-weight:300">Your smile is one of your most valuable assets. Your first visit is thorough, gentle and pressure-free.</p>
         <div style="margin-top:34px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
           <a class="btn btn-primary" href="https://apac.dentalhub.online/soe/new/?pid=AUXOD01" target="_blank" rel="noopener">Book Your First Visit</a>
           <a href="tel:0249334667" style="font-family:var(--font-head);font-size:13px;letter-spacing:.12em;color:var(--grey)">or call <span style="color:var(--neon)">02 4933 4667</span></a>
@@ -1491,22 +1552,22 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
         <div class="np-item">
           <span class="np-dot" aria-hidden="true"></span>
           <span class="np-num">01/</span>
-          <div><h3>Prevention of dental issues</h3><p>Regular check-ups and cleans catch decay, gum disease and infections before they become big (and expensive) problems.</p></div>
+          <div><h3>Prevention of dental issues</h3><p>Regular check-ups catch problems early, before they get big and expensive.</p></div>
         </div>
         <div class="np-item">
           <span class="np-dot" aria-hidden="true"></span>
           <span class="np-num">02/</span>
-          <div><h3>A comfortable first visit</h3><p>We walk you through everything: what's bothering you, what's going on, and your options. No surprises, no pressure.</p></div>
+          <div><h3>A comfortable first visit</h3><p>We walk you through everything. No surprises, no pressure.</p></div>
         </div>
         <div class="np-item">
           <span class="np-dot" aria-hidden="true"></span>
           <span class="np-num">03/</span>
-          <div><h3>No-gap new patient offer</h3><p>Examination, treatment plan, X-rays, scale and clean, and fluoride: gap waived where your fund rebates at least $199, or a flat $199 without cover. A $50 booking deposit applies and comes off the cost of your visit.</p></div>
+          <div><h3>No-gap new patient offer</h3><p>Exam, plan, X-rays, clean and fluoride. No-gap with a participating fund, or $199 flat.</p></div>
         </div>
         <div class="np-item">
           <span class="np-dot" aria-hidden="true"></span>
           <span class="np-num">04/</span>
-          <div><h3>Better overall health</h3><p>Oral health is closely linked to whole-body health. Caring for your smile is caring for yourself.</p></div>
+          <div><h3>Better overall health</h3><p>Oral health is linked to whole-body health. Caring for your smile is caring for you.</p></div>
         </div>
       </div>
     </div>
@@ -1614,7 +1675,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
     <div class="comm-inner rv">
       <span class="eyebrow">Our Community</span>
       <h2>Proudly part of the <span class="accent">East Maitland</span> community</h2>
-      <p>We live here, shop here and raise our families here. Caring for the smiles of Maitland and the Hunter Valley isn't just our job. It's our neighbourhood.</p>
+      <p>We live and raise our families here. The smiles of Maitland and the Hunter Valley aren't just our job, they're our neighbourhood.</p>
     </div>
   </div>
 </section>
@@ -1629,15 +1690,15 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
     <div class="acc faq-acc rv">
       <div class="acc-item open">
         <button class="acc-head" aria-expanded="true"><span class="acc-num">01/</span><span class="acc-title">Do you accept health funds?</span></button>
-        <div class="acc-body"><p>All health funds are welcome, and we're set up with HICAPS, so if you have private dental cover you can claim on the spot and only pay any gap. Bring your health fund card to your visit.</p></div>
+        <div class="acc-body"><p>All health funds welcome, with HICAPS on-the-spot claiming, so you only pay any gap. Bring your fund card to your visit.</p></div>
       </div>
       <div class="acc-item">
         <button class="acc-head" aria-expanded="false"><span class="acc-num">02/</span><span class="acc-title">What does the new-patient offer include?</span></button>
-        <div class="acc-body"><p>Your first visit covers a comprehensive examination, personalised treatment plan, X-rays, a scale and clean, and a fluoride treatment. We'll waive the gap where your fund rebates at least $199, or it's a flat $199 without cover. For new patients only; a $50 booking deposit applies and comes off the cost of your visit.</p></div>
+        <div class="acc-body"><p>A full exam, treatment plan, X-rays, scale and clean, and fluoride. No-gap with a participating fund (rebating $199+), or a flat $199 without cover. New patients only; a $50 deposit applies and comes off your visit.</p></div>
       </div>
       <div class="acc-item">
         <button class="acc-head" aria-expanded="false"><span class="acc-num">03/</span><span class="acc-title">Is my child eligible for CDBS?</span></button>
-        <div class="acc-body"><p>Many children are eligible for the government's Child Dental Benefits Schedule: a benefit towards basic dental services of up to $1,158 over two consecutive calendar years. Ask our team and we'll help you check.</p></div>
+        <div class="acc-body"><p>Many children qualify for the government's CDBS: up to $1,158 over two calendar years towards basic dental care. Ask us and we'll help you check.</p></div>
       </div>
       <div class="acc-item">
         <button class="acc-head" aria-expanded="false"><span class="acc-num">04/</span><span class="acc-title">What if I have a dental emergency?</span></button>
@@ -1645,11 +1706,11 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
       </div>
       <div class="acc-item">
         <button class="acc-head" aria-expanded="false"><span class="acc-num">05/</span><span class="acc-title">I'm anxious about the dentist, can you help?</span></button>
-        <div class="acc-body"><p>If you feel anxious, tell us. We'll take things at your pace, explain each step, and use gentle techniques and comfort options such as in-chair entertainment to help you relax.</p></div>
+        <div class="acc-body"><p>Just tell us. We take things at your pace, explain each step, and offer gentle comfort options to help you relax.</p></div>
       </div>
       <div class="acc-item">
         <button class="acc-head" aria-expanded="false"><span class="acc-num">06/</span><span class="acc-title">Do you offer payment plans?</span></button>
-        <div class="acc-body"><p>Yes, interest-free payment plans are available through providers such as Humm (National Dental Plan) and DentiCare. Lending criteria, fees and terms and conditions apply. See our <a href="/payment-options" style="color:var(--neon)">Fees &amp; Payment Plans page</a> for details.</p></div>
+        <div class="acc-body"><p>Yes, interest-free plans through Humm and DentiCare (criteria, fees and T&amp;Cs apply). See our <a href="/payment-options" style="color:var(--neon)">Fees &amp; Payment Plans page</a>.</p></div>
       </div>
     </div>
   </div>
@@ -1662,7 +1723,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
   <div class="wrap rv" style="position:relative;z-index:2">
     <span class="eyebrow" style="justify-content:center">New Patients Welcome</span>
     <h2>Ready to smile with <span class="accent">confidence?</span></h2>
-    <span class="final-line" style="max-width:640px;margin-inline:auto">Book online any time, or call our friendly team on 02 4933 4667. You'll find us at 135 Lawes Street, East Maitland. New patients, walk-ins and Saturday appointments are all welcome.</span>
+    <span class="final-line" style="max-width:600px;margin-inline:auto">Book online any time, or call us on 02 4933 4667. New patients, walk-ins and Saturday appointments all welcome.</span>
     <div class="final-ctas">
       <a class="btn btn-primary" href="https://apac.dentalhub.online/soe/new/?pid=AUXOD01" target="_blank" rel="noopener">Book Online</a>
       <a class="btn btn-ghost" href="tel:0249334667">☏ Call 02 4933 4667</a>
@@ -1674,7 +1735,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
 <div class="funds">
   <div class="wrap" style="text-align:center;margin-bottom:30px">
     <h2 style="font-size:clamp(24px,3vw,34px);font-weight:400">We accept <span class="accent">all major health funds</span></h2>
-    <p style="font-weight:300;font-size:15px;max-width:620px;margin:12px auto 0">New patients with health funds enjoy a no-gap comprehensive check-up, treatment plan, clean, fluoride and x-ray.*</p>
+    <p style="font-weight:300;font-size:16px;max-width:560px;margin:12px auto 0">New patients with health funds enjoy a no-gap first visit.*</p>
   </div>
   <div class="funds-track-wrap">
     <div class="funds-track" id="fundsTrack">
@@ -2009,6 +2070,7 @@ footer{background:var(--footer-bg);border-top:1px solid var(--border);padding:80
       if (t) t.innerHTML += t.innerHTML;
     });
   }
+
 
   /* theme toggle */
   const tBtn = document.getElementById('themeToggle');
